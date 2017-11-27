@@ -2,15 +2,8 @@
 <html>
 <head>
   	<title>图片自动滚动</title>
-  	<style type="text/css">
-  	#picScroll
-  	{
-	white-space: nowrap;
-	overflow: hidden;
-	width: 600px;
-	}
-</style>
-  	
+  	<meta charset="utf-8">
+  	<link rel="stylesheet" type="text/css" href="CSS.css">
 </head>
 <body>
 	<div id="picScroll">
@@ -36,41 +29,5 @@
 		</span>
  	</div> 
 </body>
-<script type="text/javascript">
-	var img=document.getElementById('picScroll');
-var img1=document.getElementById('picScroll1');
-var img2=document.getElementById('picScroll2');
-
-function changeToLeft() {
-    /*右移
-	//img2.innerHTML=img1.innerHTML;
-	if(img.scrollLeft<=0)
-	{
-    img.scrollLeft+=img2.offsetWidth;
-    }
-    else{
-    img.scrollLeft--;
-    }
-    */
-    //左移
-    if(img.scrollLeft-img1.offsetWidth>=0)
-    {
-    img.scrollLeft=0;
-    }
-    else{
-    img.scrollLeft+=1;
-    }
-    
-}
-var MyMove=setInterval(changeToLeft,10)
-    img.onmouseover=function() 
-    {
-    	clearInterval(MyMove);
-    }
-    img.onmouseout=function() 
-    {
-    	MyMove=setInterval(changeToLeft,10);
-    }
-
-</script>
+<script type="text/javascript" src="js.js"></script>
 </html>
