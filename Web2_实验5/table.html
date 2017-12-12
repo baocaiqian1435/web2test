@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>表格</title>
+	<meta charset="utf-8" />
+	<style type="text/css">
+		*{
+			font-size: 36px;
+		}
+		tr{
+			height: 30px;
+		}
+	</style>
+</head>
+<body>
+	<table width="1000px" border="1" id="1">
+		<tr height="30px">
+			<td></td><td></td><td></td><td></td><td></td><td></td>
+			<td></td><td></td><td></td><td></td><td></td><td></td>
+		</tr>
+	</table>
+	<input type="button" name="" id="add" value="添加一行" style="margin-left:840px;" onclick="addhang();"/>
+	<input type="button" name="" id="delete" value="删除一行" style="margin-left:840px;" onclick="removehang();" />
+</body>
+<script type="text/javascript">
+	function addhang(){
+		var mytr=document.createElement("TR");
+			document.getElementById('1').appendChild(mytr);
+			for(var i=0;i<12;i++)
+			{
+				var myadd=document.createElement("TD");
+				mytr.appendChild(myadd);
+			}
+	}
+	function removehang(){
+		var mytable=document.getElementById("1");
+		var n=mytable.childNodes.length;
+		mytable.removeChild(mytable.childNodes[n-1]);
+	}		
+	</script>
+</html>

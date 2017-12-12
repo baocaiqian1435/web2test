@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title> 仿QQ空间相册 </title>
+    <meta charset="utf-8" />
+    <style type="text/css">
+        #main{
+        width:1000px;
+        margin:auto;
+        }
+        #smallpic{
+        height:120px; 
+        }
+        img{
+        float:left; 
+        margin-right:10px; 
+        margin-bottom:10px;
+        }
+        #smallpic img:hover{
+            cursor:pointer; /*设定鼠标的形状为小手*/
+        }
+        .pb{
+         border:3px solid #14c3fd;
+        } 
+    </style>
+    
+</head>
+
+<body>
+    <div id="main">
+        <div id="smallpic">
+            <img src="images/s2.jpg" width="180" height="100" id="2" onclick="showpic('images/s2.jpg','2');" />
+            <img src="images/s3.jpg" width="180" height="100"  id="3" onclick="showpic('images/s3.jpg','3');" />
+            <img src="images/s4.jpg" width="180" height="100" id="4" onclick="showpic('images/s4.jpg','4');" />
+            <img src="images/s5.jpg" width="180" height="100" id="5" onclick="showpic('images/s5.jpg','5')" />
+            <img src="images/s6.jpg" width="180" height="100" id="6" onclick="showpic('images/s6.jpg','6');" />
+        </div>
+        <div >
+            <img id="bigpic" src="images/s1.jpg" width="940px" />
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var img1=document.getElementById("smallpic").childNodes[0];
+    function showpic(i,j,n) {
+        var bigpic1=document.getElementById('bigpic');
+        bigpic1.src=i;
+       // var img=document.getElementById(j);
+        for(var n=2;n<7;n++)
+        {
+            sn=String(n);
+            var img=document.getElementById(sn);
+            if(sn!=j)
+            {
+                img.style.border="";
+            }
+            else
+            {
+                img.style.border="3px solid #ff8800";
+            }
+        }
+    }
+</script>
+</html>
